@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: f873eaad294cf4516a7680aae681bfa6
+timeCreated: 1480324892
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - MainCanvas: {fileID: 1000011324053302, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - PleaseEnterObject: {fileID: 1000010267935318, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - GoButtonObject: {fileID: 1000011277076704, guid: 5b389118fe7634828928fd36e3bc7a9b,
+      type: 2}
+  - GameClearObject: {fileID: 1000012909132444, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - NextStageButton: {fileID: 1000011519587586, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - GameOverObject: {fileID: 1000012182791564, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - TryAgainButton: {fileID: 1000013247678354, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - PowerSliderObject: {fileID: 1000010170022008, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - ManagerCameraButton: {fileID: 1000013225065616, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - MainCamerasButton: {fileID: 1000011051240696, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  - CenterCamera: {fileID: 1000013949799288, guid: b32f2e11a1c6a4cdd8f8db7c452600af,
+      type: 2}
+  - UpCamera: {fileID: 1000012259016506, guid: 58b7bf752f3aa4d2ab185db5b426a068, type: 2}
+  - RightCamera: {fileID: 1000013471034810, guid: 58b7bf752f3aa4d2ab185db5b426a068,
+      type: 2}
+  - LeftCamera: {fileID: 1000010208953346, guid: 58b7bf752f3aa4d2ab185db5b426a068,
+      type: 2}
+  - ButtomCamera: {fileID: 1000011867095754, guid: 58b7bf752f3aa4d2ab185db5b426a068,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

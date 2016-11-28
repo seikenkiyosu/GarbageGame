@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: cd59ef423b337498fbb51d95c498c1eb
+timeCreated: 1480309884
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Garbage: {fileID: 1000010063584516, guid: 7d067131e12614eb4975273ef79f5239, type: 2}
+  - ArrayObject: {fileID: 1000013159896748, guid: 8d0b3360e0c9a4569ab7952ef3d5a596,
+      type: 2}
+  - PowerSliderObject: {fileID: 1000010170022008, guid: bb8bd99919b2a49e9a29579b4fb21dd1,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
