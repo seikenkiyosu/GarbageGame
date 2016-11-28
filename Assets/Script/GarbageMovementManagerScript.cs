@@ -47,10 +47,11 @@ public class GarbageMovementManagerScript : MonoBehaviour {
 			WasCast = true;
 		}
 
-		if (StaticValueManager.IsGameOver) {
+		if (StaticValueManager.IsGameOver || StaticValueManager.IsGameClear) {
 			rb.velocity = Vector3.zero;
-		}
-	}
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+        }
+    }
 
 	/************************************ OnClickFunction *************************************/
 	/****** For Go Button *******/

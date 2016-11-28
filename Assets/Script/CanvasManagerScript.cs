@@ -15,8 +15,9 @@ public class CanvasManagerScript : MonoBehaviour {
 	public GameObject PowerSliderObject;
 	public GameObject ManagerCameraButton;
 	public GameObject MainCamerasButton;
+    public bool DefaultCameraOn;
 
-	public GameObject CenterCamera;
+    public GameObject CenterCamera;
 	public GameObject UpCamera;
 	public GameObject RightCamera;
 	public GameObject LeftCamera;
@@ -27,6 +28,7 @@ public class CanvasManagerScript : MonoBehaviour {
 	private float NextTimeForPleaseEnter;
 	private Slider PowerSlider;
 	private GameObject CurrentCamera;
+    private bool CameraOn;
 
 	void Awake () {
 		MainCanvas.SetActive (true);
@@ -47,7 +49,13 @@ public class CanvasManagerScript : MonoBehaviour {
 		ButtomCamera.SetActive (false);
 		CurrentCamera = CenterCamera;
 
-		NextTimeForPleaseEnter = 0.0f;
+        GameClearObject.transform.localScale = Vector3.zero;
+        NextStageButton.transform.localScale = Vector3.zero;
+        GameOverObject.transform.localScale = Vector3.zero;
+        TryAgainButton.transform.localScale = Vector3.zero;
+
+        CameraOn = DefaultCameraOn;
+		NextTimeForPleaseEnter = Time.time;
 	}
 
 	void Update () {
@@ -55,12 +63,20 @@ public class CanvasManagerScript : MonoBehaviour {
 			PleaseEnter ();
 		} else {
 			PleaseEnterObject.SetActive (false);
-		}
+        }
 
 		if (StaticValueManager.IsStart) {
-			ManagerCameraButton.SetActive(true);
-			GoButtonObject.SetActive (true);
-			ChangeCamera ();
+            GoButtonObject.SetActive(true);
+            ManagerCameraButton.SetActive(true);
+            if (CameraOn) {
+                ManagerCameraButton.GetComponentInChildren<Text>().text = "CameraButton Off";
+                MainCamerasButton.SetActive(true);
+            }
+            else {
+                ManagerCameraButton.GetComponentInChildren<Text>().text = "CameraButton On";
+                MainCamerasButton.SetActive(false);
+            }
+            ChangeCamera ();
 		}
 
 		if (StaticValueManager.IsGameClear) {
@@ -69,17 +85,16 @@ public class CanvasManagerScript : MonoBehaviour {
 
 		if (StaticValueManager.IsGameOver) {
 			GameOver ();
-		}
+        }
 	}
 
 	private void PleaseEnter () {
-//		if (Time.time > NextTimeForPleaseEnter) {
-//			PleaseEnterObject.SetActive(!PleaseEnterObject.activeInHierarchy);
-//			NextTimeForPleaseEnter += PleaseEnterAppearInterval;
-//		}
-
-		PleaseEnterObject.SetActive (true);
-	}
+        if (Time.time > NextTimeForPleaseEnter) {
+            PleaseEnterObject.SetActive(!PleaseEnterObject.activeInHierarchy);
+            NextTimeForPleaseEnter += PleaseEnterAppearInterval;
+        }
+        //PleaseEnterObject.SetActive (true);
+    }
 
 	private void GameClear () {
 		GameClearObject.SetActive(true);
@@ -135,12 +150,10 @@ public class CanvasManagerScript : MonoBehaviour {
 
 	/****** For Camera Button *******/
 	public void ManagerCameraButtonOnClick () {
-		if (MainCamerasButton.activeInHierarchy) {
-			MainCamerasButton.SetActive (false);
-			ManagerCameraButton.GetComponentInChildren <Text> ().text = "CameraButton On";
+		if (CameraOn) {
+            CameraOn = false;
 		} else {
-			MainCamerasButton.SetActive (true);
-			ManagerCameraButton.GetComponentInChildren <Text> ().text = "CameraButton Off";
+            CameraOn = true;
 		}
 	}
 
