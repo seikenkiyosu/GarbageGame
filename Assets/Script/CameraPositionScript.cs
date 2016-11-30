@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class CameraPositionScript : MonoBehaviour {
-	public GameObject Garbage;
+	public GameObject Target;
 	public Vector3 DistanceFromGarbage;
 
 	void Update () {
-		transform.position = Garbage.transform.position + DistanceFromGarbage;
+		transform.position = Target.transform.position + DistanceFromGarbage;
 	}
 }
