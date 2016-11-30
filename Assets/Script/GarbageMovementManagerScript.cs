@@ -19,7 +19,7 @@ public class GarbageMovementManagerScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (!StaticValueManager.IsStart && Input.GetKeyDown ("return")) {
+		if (!StaticValueManager.IsStart && (Input.GetKeyDown ("return") || OnTouchDown()) ) {
 			StaticValueManager.IsStart = true;
 			ArrayObject.SetActive (true);
 		}
@@ -51,6 +51,30 @@ public class GarbageMovementManagerScript : MonoBehaviour {
 			rb.velocity = Vector3.zero;
             rb.constraints = RigidbodyConstraints.FreezeRotation;
         }
+    }
+
+	bool OnTouchDown() {
+        // タッチされているとき
+        if( 0 < Input.touchCount){
+            // タッチされている指の数だけ処理
+            for(int i = 0; i < Input.touchCount; i++){
+                // タッチ情報をコピー
+                Touch t = Input.GetTouch(i);
+                // タッチしたときかどうか
+                if(t.phase == TouchPhase.Began ){
+                    //タッチした位置からRayを飛ばす
+                    Ray ray = Camera.main.ScreenPointToRay(t.position);
+                    RaycastHit hit = new RaycastHit();
+                    if (Physics.Raycast(ray, out hit)){
+                        //Rayを飛ばしてあたったオブジェクトが自分自身だったら
+                        if (hit.collider.gameObject){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false; //タッチされてなかったらfalse
     }
 
 	/************************************ OnClickFunction *************************************/
