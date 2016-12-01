@@ -39,7 +39,6 @@ public class SceneButtonMovement : MonoBehaviour {
 
 
     /* OnClickButton */
-    float Moveposition = 0.0f;
     public void OnClickUpButton () {
         StageButtonPositionY = ( Mathf.Abs ( StageButtonPositionY - DistanceYBetweenStages - YCriteria + StageFieldSizeY) % StageFieldSizeY) + YCriteria;
         SceneButtons.transform.position = new Vector3(
