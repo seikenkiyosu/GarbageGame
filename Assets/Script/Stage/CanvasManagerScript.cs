@@ -10,6 +10,7 @@ public class CanvasManagerScript : MonoBehaviour {
 	public GameObject GoButtonObject;
 	public GameObject GameClearObject;
 	public GameObject NextStageButton;
+	public string NextStageName;
 	public GameObject GameOverObject;
 	public GameObject TryAgainButton;
 	public GameObject PowerSliderObject;
@@ -104,7 +105,7 @@ public class CanvasManagerScript : MonoBehaviour {
 	}
 
 	public void GoingNextStage () {		//included by button.onClick in NextStageButton
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (NextStageName);
 	}
 
 	private void GameOver () {
@@ -115,7 +116,7 @@ public class CanvasManagerScript : MonoBehaviour {
 	}
 
 	public void TryingAgain () {		//included by button.onClick in TryAgainButton
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
 	void ChangeCamera () {
