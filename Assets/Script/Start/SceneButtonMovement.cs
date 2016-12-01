@@ -35,16 +35,6 @@ public class SceneButtonMovement : MonoBehaviour {
         StageButtonPositionY = YCriteria;
         StageFieldSizeX = RowSceneNumbers * DistanceXBetweenStages;
         StageFieldSizeY = ColumnSceneNumbers * DistanceYBetweenStages;
-        Debug.Log ("XCriteria = " + XCriteria);
-        Debug.Log ("YCriteria = " + YCriteria);
-        Debug.Log ("Between Distance X = " + DistanceXBetweenStages);
-        Debug.Log ("Between Distance Y = " + DistanceYBetweenStages);
-        Debug.Log ("StageButtonPositionX = " + StageButtonPositionX);
-        Debug.Log ("StageButtonPositionY = " + StageButtonPositionY);
-        Debug.Log ("StageFieldSizeX = " + StageFieldSizeX);
-        Debug.Log ("StageFieldSizeY = " + StageFieldSizeY);
-        // Debug.Log ("RowSceneNumbers * DistanceXBetweenStages - XCriteria = " + (RowSceneNumbers * DistanceXBetweenStages - XCriteria));
-        // Debug.Log ("(RowSceneNumbers+1) * DistanceXBetweenStages)" + ((RowSceneNumbers+1) * DistanceXBetweenStages));
     }
 
 
