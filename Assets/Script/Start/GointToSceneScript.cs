@@ -4,8 +4,5 @@ using System.Collections;
 
 public class GointToSceneScript : MonoBehaviour {
 	
-	void Start () {
-		Debug.Log (SceneManager.sceneCount);
-	}
 	
 }

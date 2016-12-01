@@ -149,6 +149,10 @@ public class CanvasManagerScript : MonoBehaviour {
 	/************************************ OnClickFunction *************************************/
 
 	/****** For Camera Button *******/
+	public void SettingButtonOnClick () {
+		SceneManager.LoadScene("Settings");
+	}
+
 	public void ManagerCameraButtonOnClick () {
 		if (CameraOn) {
             CameraOn = false;
