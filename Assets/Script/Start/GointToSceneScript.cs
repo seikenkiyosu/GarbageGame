@@ -5,11 +5,11 @@ using System.Collections;
 
 public class GointToSceneScript : MonoBehaviour {
 	
-	private string StageName;
+	private string stageName;
 
-	void StageButtonOnClick (GameObject StageButton) {
-		StageName = StageButton.GetComponentInChildren <Text> ().text;
-		SceneManager.LoadScene (StageName);
+	public void StageButtonOnClick (GameObject StageButton) {
+		stageName = StageButton.GetComponentInChildren <Text> ().text;
+		SceneManager.LoadScene (stageName);
 	}
-	
+
 }
