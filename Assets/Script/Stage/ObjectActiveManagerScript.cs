@@ -25,8 +25,8 @@ public class ObjectActiveManagerScript : MonoBehaviour {
 		BackWall.SetActive (true);
 		RightWall.SetActive (true);
 		LeftWall.SetActive (true);
-		Wind.SetActive (true);
-		ArrowObject.SetActive (true);
+		Wind.SetActive (false);
+		ArrowObject.SetActive (false);
 	}
 
 }
