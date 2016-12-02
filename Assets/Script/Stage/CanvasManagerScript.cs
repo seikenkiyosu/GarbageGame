@@ -7,16 +7,18 @@ public class CanvasManagerScript : MonoBehaviour {
 
 	public GameObject MainCanvas;
 	public GameObject PleaseEnterObject;
+	public GameObject ManagerCameraButton;
+	public GameObject MainCamerasButton;
+    public bool DefaultCameraOn;
+	public GameObject PowerSliderObject;
+	public GameObject BreakingBallButton;
+	public GameObject BreakingBallSliderObject;
 	public GameObject GoButtonObject;
 	public GameObject GameClearObject;
 	public GameObject NextStageButton;
 	public string NextStageName;
 	public GameObject GameOverObject;
 	public GameObject TryAgainButton;
-	public GameObject PowerSliderObject;
-	public GameObject ManagerCameraButton;
-	public GameObject MainCamerasButton;
-    public bool DefaultCameraOn;
 
     public GameObject CenterCamera;
 	public GameObject UpCamera;
@@ -34,14 +36,16 @@ public class CanvasManagerScript : MonoBehaviour {
 	void Awake () {
 		MainCanvas.SetActive (true);
 		PleaseEnterObject.SetActive (false);
+		ManagerCameraButton.SetActive(false);
+		BreakingBallButton.SetActive (false);
+		BreakingBallSliderObject.SetActive (false);
+		MainCamerasButton.SetActive (false);
 		GoButtonObject.SetActive (false);
 		GameClearObject.SetActive (false);
 		NextStageButton.SetActive (false);
 		GameOverObject.SetActive (false);
 		TryAgainButton.SetActive (false);
 		PowerSliderObject.SetActive (false);
-		ManagerCameraButton.SetActive(false);
-		MainCamerasButton.SetActive (false);
 
 		CenterCamera.SetActive (true);
 		UpCamera.SetActive (false);
