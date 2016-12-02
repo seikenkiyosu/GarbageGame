@@ -5,7 +5,7 @@ using System.Collections;
 public class SettingTransactionScript : MonoBehaviour {
 
 	public void SettingButtonOnClick () {
-		SceneManager.LoadScene ("Settings");
+		SceneManager.LoadScene ("Settings", LoadSceneMode.Additive);
 	}
 
 }

@@ -5,7 +5,7 @@ using System.Collections;
 public class SettingsScript : MonoBehaviour {
 
 	public void BackButtonOnClick () {
-		SceneManager.LoadScene ("Start");
+		SceneManager.UnloadScene ("Settings");
 	}
 
 }
