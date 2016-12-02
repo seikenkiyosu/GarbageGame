@@ -11,6 +11,7 @@ public class ObjectActiveManagerScript : MonoBehaviour {
 	public GameObject FrontWall;
 	public GameObject BackWall;
 	public GameObject RightWall;
+	public GameObject LeftWall;
 	public GameObject Wind;
 	public GameObject ArrowObject;
 
@@ -23,6 +24,7 @@ public class ObjectActiveManagerScript : MonoBehaviour {
 		FrontWall.SetActive (true);
 		BackWall.SetActive (true);
 		RightWall.SetActive (true);
+		LeftWall.SetActive (true);
 		Wind.SetActive (true);
 		ArrowObject.SetActive (true);
 	}
