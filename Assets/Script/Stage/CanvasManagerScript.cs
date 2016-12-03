@@ -155,7 +155,7 @@ public class CanvasManagerScript : MonoBehaviour {
 
 	/****** For Camera Button *******/
 	public void StartButtonOnClick () {
-		SceneManager.LoadScene ("Start");
+		SceneManager.LoadScene ("_Start");
 	}
 
 	public void ManagerCameraButtonOnClick () {
