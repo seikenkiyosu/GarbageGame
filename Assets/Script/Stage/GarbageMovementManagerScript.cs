@@ -5,8 +5,9 @@ using System.Collections;
 public class GarbageMovementManagerScript : MonoBehaviour {
 
 	public GameObject Garbage;
-	public GameObject ArrayObject;
+	public GameObject ArrowObject;
 	public GameObject PowergageSliderObject;
+	public GameObject ArrowObjectInGarbageBox;
 
 	private Rigidbody rb;
 	private Slider PowerSlider;
@@ -21,7 +22,8 @@ public class GarbageMovementManagerScript : MonoBehaviour {
 	void Update () {
 		if (!StaticValueManager.IsStart && (Input.GetKeyDown ("return") || OnTouchDown()) ) {
 			StaticValueManager.IsStart = true;
-			ArrayObject.SetActive (true);
+			ArrowObject.SetActive (true);
+			ArrowObjectInGarbageBox.SetActive (true);
 		}
 
 		if (StaticValueManager.IsStart && Input.GetKeyDown ("space")) {
@@ -38,9 +40,10 @@ public class GarbageMovementManagerScript : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (StaticValueManager.AllDetermine && !WasCast) {
+			ArrowObjectInGarbageBox.SetActive (false);
 			rb.useGravity = true;
-			float anglex = (360 - ArrayObject.transform.eulerAngles.x) * Mathf.PI / 180;
-			float angley = (ArrayObject.transform.eulerAngles.y) * Mathf.PI / 180;
+			float anglex = (360 - ArrowObject.transform.eulerAngles.x) * Mathf.PI / 180;
+			float angley = (ArrowObject.transform.eulerAngles.y) * Mathf.PI / 180;
 			Vector3 push = new Vector3 (Mathf.Sin(angley), Mathf.Sin (anglex), Mathf.Cos (anglex));
 			push.Normalize();
 			rb.AddForce (push * PowerSlider.value, ForceMode.Impulse);

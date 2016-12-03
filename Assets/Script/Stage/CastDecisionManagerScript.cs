@@ -5,7 +5,7 @@ using System.Collections;
 public class CastDecisionManagerScript : MonoBehaviour {
 
 	public GameObject Garbage;
-	public GameObject ArrayObject;
+	public GameObject ArrowObject;
 	public float ArrowRotateSpeed = 50.0f;
 	public float BetweenGarbageAndArrow = 1.0f;
 	public GameObject PowerSliderObject;
@@ -22,14 +22,14 @@ public class CastDecisionManagerScript : MonoBehaviour {
 	private GameObject PowergageMediumValue;
 
 	void Awake () {
-		ArrayObject.SetActive (false);
+		ArrowObject.SetActive (false);
 		PowerSliderObject.SetActive (false);
 	}
 
 	void Start () {
 		PowerSlider = PowerSliderObject.GetComponentInChildren <Slider> ();
 		ArrowAxisPosition = Garbage.transform.position;
-		ArrayObject.transform.position = ArrowAxisPosition + new Vector3 (0.0f, -0.5f, BetweenGarbageAndArrow+1);
+		ArrowObject.transform.position = ArrowAxisPosition + new Vector3 (0.0f, -0.5f, BetweenGarbageAndArrow+1);
 		PowerSlider.maxValue = MaxPowerValue;
 		PowerGageSpeed = PowerSlider.maxValue;
 		PowergageMaxValue = PowerSliderObject.transform.Find("MaxValue").gameObject;
@@ -39,8 +39,7 @@ public class CastDecisionManagerScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (StaticValueManager.IsStart && !ArrayObject.activeInHierarchy && !PowerSliderObject.activeInHierarchy) {
-			ArrayObject.SetActive (true);
+		if (StaticValueManager.IsStart && !ArrowObject.activeInHierarchy && !PowerSliderObject.activeInHierarchy) {
 			PowerSliderObject.SetActive (true);
 		}
 
@@ -56,19 +55,20 @@ public class CastDecisionManagerScript : MonoBehaviour {
 			}
 			else {
 				StaticValueManager.AllDetermine = true;
+				
 			}
 		}
 	}
 
 	private void Updown () {
 		if (vxisPositive) {
-			ArrayObject.transform.RotateAround (ArrowAxisPosition, new Vector3(-BetweenGarbageAndArrow,0,0), ArrowRotateSpeed * Time.deltaTime);
-			if (ArrayObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrayObject.transform.position.y > Garbage.transform.position.y) {
+			ArrowObject.transform.RotateAround (ArrowAxisPosition, new Vector3(-BetweenGarbageAndArrow,0,0), ArrowRotateSpeed * Time.deltaTime);
+			if (ArrowObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrowObject.transform.position.y > Garbage.transform.position.y) {
 				vxisPositive = false;
 			}
 		} else if (!vxisPositive) {
-			ArrayObject.transform.RotateAround (ArrowAxisPosition, new Vector3(BetweenGarbageAndArrow,0,0), ArrowRotateSpeed * Time.deltaTime);
-			if (ArrayObject.transform.position.y <= Garbage.transform.position.y - BetweenGarbageAndArrow * 2 && ArrayObject.transform.position.y < Garbage.transform.position.y) {
+			ArrowObject.transform.RotateAround (ArrowAxisPosition, new Vector3(BetweenGarbageAndArrow,0,0), ArrowRotateSpeed * Time.deltaTime);
+			if (ArrowObject.transform.position.y <= Garbage.transform.position.y - BetweenGarbageAndArrow * 2 && ArrowObject.transform.position.y < Garbage.transform.position.y) {
 				vxisPositive = true;
 			}
 		}
@@ -76,13 +76,13 @@ public class CastDecisionManagerScript : MonoBehaviour {
 
 	private void RightLeft () {
 		if (vyisPositive) {
-			ArrayObject.transform.RotateAround (ArrowAxisPosition, new Vector3 (0, -BetweenGarbageAndArrow, 0), ArrowRotateSpeed * Time.deltaTime);
-			if (ArrayObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrayObject.transform.position.x < Garbage.transform.position.x) {
+			ArrowObject.transform.RotateAround (ArrowAxisPosition, new Vector3 (0, -BetweenGarbageAndArrow, 0), ArrowRotateSpeed * Time.deltaTime);
+			if (ArrowObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrowObject.transform.position.x < Garbage.transform.position.x) {
 				vyisPositive = !vyisPositive;
 			}
 		} else {
-			ArrayObject.transform.RotateAround (ArrowAxisPosition, new Vector3 (0, BetweenGarbageAndArrow, 0), ArrowRotateSpeed * Time.deltaTime);
-			if (ArrayObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrayObject.transform.position.x > Garbage.transform.position.x) {
+			ArrowObject.transform.RotateAround (ArrowAxisPosition, new Vector3 (0, BetweenGarbageAndArrow, 0), ArrowRotateSpeed * Time.deltaTime);
+			if (ArrowObject.transform.position.z <= Garbage.transform.position.z + BetweenGarbageAndArrow && ArrowObject.transform.position.x > Garbage.transform.position.x) {
 				vyisPositive = !vyisPositive;
 			}
 		}
