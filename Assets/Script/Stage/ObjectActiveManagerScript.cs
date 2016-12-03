@@ -6,7 +6,6 @@ public class ObjectActiveManagerScript : MonoBehaviour {
 	public GameObject Garbage;
 	public GameObject CeneterCamera;
 	public GameObject Cameras;
-	public GameObject GarbageBox;
 	public GameObject Field;
 	public GameObject Ceil;
 	public GameObject FrontWall;
@@ -20,7 +19,6 @@ public class ObjectActiveManagerScript : MonoBehaviour {
 		Garbage.SetActive (true);
 		CeneterCamera.SetActive (true);
 		Cameras.SetActive (true);
-		GarbageBox.SetActive (true);
 		Field.SetActive (true);
 		Ceil.SetActive (true);
 		FrontWall.SetActive (true);
